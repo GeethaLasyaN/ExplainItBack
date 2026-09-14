@@ -74,7 +74,7 @@ function App() {
     setFollowUpFeedback(null);
 
     try {
-      const response = await fetch("https://explainitback-wktr.onrender.com/evaluate", {
+      const response = await fetch("http://127.0.0.1:8000/evaluate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ function App() {
     setFollowUpFeedback(null);
 
     try {
-      const response = await fetch("https://explainitback-wktr.onrender.com/follow-up", {
+      const response = await fetch("http://127.0.0.1:8000/follow-up", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
