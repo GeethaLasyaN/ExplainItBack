@@ -29,10 +29,6 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  /* =========================
-     INTERACTIVE 3D
-     ========================= */
-
   const handleMouseMove = (event) => {
     const rect = event.currentTarget.getBoundingClientRect();
 
@@ -57,10 +53,6 @@ function App() {
       y: 0,
     });
   };
-
-  /* =========================
-     AI EVALUATION
-     ========================= */
 
   const evaluateExplanation = async () => {
     if (!topic.trim() || !explanation.trim()) {
@@ -105,10 +97,6 @@ function App() {
       setLoading(false);
     }
   };
-
-  /* =========================
-     FOLLOW UP
-     ========================= */
 
   const submitFollowUp = async () => {
     if (!followUpAnswer.trim()) {
@@ -176,8 +164,6 @@ function App() {
     <div className="app">
       {page === "home" ? (
         <>
-          {/* NAVBAR */}
-
           <nav className="navbar">
             <div className="logo" onClick={goHome}>
               <span className="logo-mark">E</span>
@@ -203,8 +189,6 @@ function App() {
             </div>
           </nav>
 
-          {/* HERO */}
-
           <main className="hero">
             <div className="hero-content">
               <div className="eyebrow">AI-POWERED LEARNING</div>
@@ -226,8 +210,6 @@ function App() {
                 <span>→</span>
               </button>
             </div>
-
-            {/* INTERACTIVE 3D VISUAL */}
 
             <div
               className="hero-visual"
@@ -284,8 +266,6 @@ function App() {
             </div>
           </main>
 
-          {/* WHY SECTION */}
-
           <section className="why-section" id="why">
             <div className="why-label">WHY EXPLAINITBACK</div>
 
@@ -303,8 +283,6 @@ function App() {
         </>
       ) : (
         <>
-          {/* LEARNING NAVBAR */}
-
           <nav className="learn-navbar">
             <div className="logo" onClick={goHome}>
               <span className="logo-mark">E</span>
@@ -320,8 +298,6 @@ function App() {
             </button>
           </nav>
 
-          {/* LEARNING PAGE */}
-
           <main
             className="learn-page"
             style={{
@@ -332,7 +308,7 @@ function App() {
               className="learn-intro"
               style={{
                 marginTop: "0px",
-                marginBottom: "28px",
+                marginBottom: "25px",
               }}
             >
               <h1>
@@ -344,8 +320,6 @@ function App() {
                 someone else.
               </p>
             </section>
-
-            {/* INPUT */}
 
             <section className="input-card">
               <div className="field">
@@ -391,8 +365,6 @@ function App() {
               </button>
             </section>
 
-            {/* AI ANALYSIS */}
-
             {analysis && evaluation && (
               <section className="analysis-section">
                 <div className="analysis-heading">
@@ -405,8 +377,6 @@ function App() {
                     <strong>{analysis.topic}</strong>
                   </p>
                 </div>
-
-                {/* SCORE */}
 
                 <div className="score-card">
                   <div>
@@ -430,8 +400,6 @@ function App() {
                       : "Let's strengthen the basics"}
                   </div>
                 </div>
-
-                {/* ANALYSIS CARDS */}
 
                 <div className="analysis-grid">
                   <div className="feedback-card correct-card">
@@ -507,8 +475,6 @@ function App() {
                   </div>
                 </div>
 
-                {/* FOLLOW UP */}
-
                 {evaluation.follow_up && (
                   <div className="follow-up-section">
                     <div className="eyebrow">
@@ -583,8 +549,6 @@ function App() {
                     )}
                   </div>
                 )}
-
-                {/* ACTION BUTTONS */}
 
                 <div className="analysis-actions">
                   <button
