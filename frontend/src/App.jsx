@@ -74,16 +74,19 @@ function App() {
     setFollowUpFeedback(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/evaluate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          topic: topic.trim(),
-          explanation: explanation.trim(),
-        }),
-      });
+      const response = await fetch(
+        "https://explainitback-wktr.onrender.com/evaluate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            topic: topic.trim(),
+            explanation: explanation.trim(),
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Server error: ${response.status}`);
@@ -124,17 +127,20 @@ function App() {
     setFollowUpFeedback(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/follow-up", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          topic: topic,
-          question: evaluation.follow_up,
-          answer: followUpAnswer.trim(),
-        }),
-      });
+      const response = await fetch(
+        "https://explainitback-wktr.onrender.com/follow-up",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            topic: topic,
+            question: evaluation.follow_up,
+            answer: followUpAnswer.trim(),
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Server error: ${response.status}`);
@@ -316,10 +322,19 @@ function App() {
 
           {/* LEARNING PAGE */}
 
-          <main className="learn-page">
-            <section className="learn-intro">
-              <div className="eyebrow">YOUR EXPLANATION</div>
-
+          <main
+            className="learn-page"
+            style={{
+              paddingTop: "0px",
+            }}
+          >
+            <section
+              className="learn-intro"
+              style={{
+                marginTop: "0px",
+                marginBottom: "28px",
+              }}
+            >
               <h1>
                 Explain it <span>back.</span>
               </h1>
